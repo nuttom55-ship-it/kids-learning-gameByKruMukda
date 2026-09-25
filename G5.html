@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="th">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260923-05-29a7a27","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/83d6dfdadcd4750a.telemetry_sdk.js" integrity="sha512-XS4Dvzp6vbagZS9vFErihvr8aO3S0tH78KWUefn06fmL4WYqryBtZj/IOLITYj7dFA4gPVvPg1W/JB1DK3uLNQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เกมเรียนรู้สิ่งของ 8 ด่าน</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#26335c; --blue:#4a8dff; --yellow:#ffd75b; --pink:#ff6f93; --mint:#65d9bc; --paper:#fffdf6; }
+    * { box-sizing:border-box; }
+    body { margin:0; width:100%; font-family:Kanit,sans-serif; color:var(--ink); overflow-x:hidden; }
+    .game-shell { width:100%; min-height:calc(100 * min(var(--vh, 1vh), 1vh)); background:linear-gradient(135deg,#9ce8ff 0%,#e6f7ff 43%,#fff4bd 100%); position:relative; overflow:hidden; }
+    .game-shell:before,.game-shell:after { content:""; position:absolute; border-radius:999px; opacity:.34; pointer-events:none; }
+    .game-shell:before { width:330px;height:330px;background:#ff9ab4;right:-115px;top:65px; }
+    .game-shell:after { width:250px;height:250px;background:#77e2ba;left:-100px;bottom:-80px; }
+    .bubble { position:absolute; border-radius:50%; background:#fff; opacity:.45; animation:float 5s ease-in-out infinite; }
+    @keyframes float { 50%{ transform:translateY(-14px) rotate(5deg); } }
+    
+    .panel { 
+      background-image: linear-gradient(rgba(255, 253, 246, 0.75), rgba(255, 253, 246, 0.75)), url('https://lh3.googleusercontent.com/d/1nLP4I_I18mWDVeLWeTh-S1je05V2cpQ1');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 4px solid #fff; 
+      box-shadow: 0 12px 0 rgba(58,111,174,.13),0 17px 32px rgba(41,79,133,.15); 
+    }
+    
+    #welcome .panel {
+      background-image: linear-gradient(rgba(255, 253, 246, 0.4), rgba(255, 253, 246, 0.4)), url('https://lh3.googleusercontent.com/d/1nLP4I_I18mWDVeLWeTh-S1je05V2cpQ1');
+    }
+
+    .screen { display:none; position:relative; z-index:2; }
+    .screen.active { display:block; animation:enter .4s ease both; }
+    @keyframes enter { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
+    .game-button { border:0; border-bottom:5px solid rgba(41,72,139,.22); transition:.18s; cursor:pointer; }
+    .game-button:hover { transform:translateY(-2px); filter:brightness(1.04); }
+    .game-button:active { transform:translateY(3px); border-bottom-width:2px; }
+    .option { border:3px solid #dce9ff; background:rgba(255,255,255,0.95); transition:.18s; cursor:pointer; }
+    .option:hover,.option.selected { border-color:#4a8dff; background:#eaf3ff; transform:translateY(-2px); }
+    .option.selected { box-shadow:0 5px 0 #b9d4ff; }
+    .status { min-height:34px; font-weight:700; }
+    .star-pop { animation:pop .65s cubic-bezier(.2,1.5,.4,1); }
+    @keyframes pop { 0%{transform:scale(.3) rotate(-20deg);opacity:0} 70%{transform:scale(1.25) rotate(8deg)} 100%{transform:scale(1);opacity:1} }
+    .product-img { width:100%; height:155px; object-fit:contain; }
+    .trophy-img { width:160px; height:160px; object-fit:contain; margin:0 auto 1rem auto; }
+    .welcome-img { width:140px; height:140px; object-fit:contain; margin:0 auto 1rem auto; }
+    .teacher-img { width:150px; height:150px; object-fit:cover; border-radius:50%; border:4px solid #4a8dff; margin:1.5rem auto 0.5rem auto; box-shadow:0 6px 16px rgba(0,0,0,0.12); }
+    .pair-item { border:3px dashed #b8cdf6; background:rgba(255,255,255,0.95); border-radius:20px; padding:10px; cursor:pointer; transition:.18s; }
+    .pair-item.selected { border-style:solid; border-color:#ff7ba0; background:#fff1f5; transform:scale(1.03); }
+    .pair-item.matched { border-style:solid; border-color:#54c89f; background:#e7fff5; pointer-events:none; }
+    .grid-cell { aspect-ratio:1; border-radius:14px; background:rgba(239,245,255,0.95); border:3px solid #d3e2f8; display:flex;align-items:center;justify-content:center;font-size:2.2rem; }
+    .grid-cell.goal { background:#fff4b9; border-color:#f4c94d; }
+    .grid-cell.player { background:#e8fff6; border-color:#56ca9f; }
+    .drop-slot { min-height:80px; border:3px dashed #a9bde5; border-radius:16px; background:rgba(247,250,255,0.95); display:flex;justify-content:center;align-items:center;padding:8px; cursor:pointer; }
+    .drop-slot.filled { border-style:solid; border-color:#58cda3; background:#e8fff4; }
+    .mini-product { width:55px;height:55px;object-fit:contain; }
+    .confetti { position:absolute; width:11px; height:18px; border-radius:3px; animation:fall 2.7s linear infinite; }
+    @keyframes fall { from{transform:translateY(-30px) rotate(0deg)} to{transform:translateY(620px) rotate(660deg)} }
+    .modal { display:none; }
+    .modal.show { display:flex; }
+    
+    .speaker-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #4a8dff;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-left: 6px;
+      transition: transform 0.15s, background 0.15s;
+      vertical-align: middle;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+    .speaker-btn:hover { transform: scale(1.1); background: #2563eb; }
+    .speaker-btn:active { transform: scale(0.95); }
+
+    button:focus-visible { outline:4px solid #172c6d; outline-offset:3px; }
+    @media(max-width:640px){ .product-img{height:105px}.trophy-img,.welcome-img{width:120px;height:120px}.teacher-img{width:120px;height:120px}.panel{border-width:3px}.grid-cell{font-size:1.55rem}.drop-slot{min-height:64px} }
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="game-shell">
+   <span class="bubble" style="width:27px;height:27px;left:8%;top:15%"></span> 
+   <span class="bubble" style="width:16px;height:16px;left:22%;top:7%;animation-delay:1s"></span> 
+   <span class="bubble" style="width:35px;height:35px;right:13%;bottom:18%;animation-delay:2s"></span>
+
+   <header id="game-header" class="hidden relative z-10 w-full px-4 pt-4">
+    <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-3xl px-4 py-3 panel">
+     <div class="flex items-center gap-2">
+      <span class="text-3xl">🛒</span>
+      <div>
+       <p class="m-0 font-extrabold leading-tight text-lg text-slate-800">เกมเรียนรู้สิ่งของ</p>
+       <p id="progressText" class="m-0 text-sm font-semibold text-blue-600" aria-live="polite">ด่าน 1 จาก 8</p>
+      </div>
+     </div>
+     <nav aria-label="เมนูเกม" class="flex gap-2">
+      <button id="helpBtn" type="button" class="game-button rounded-2xl bg-amber-400 px-3 py-2 font-bold text-slate-800" aria-label="เปิดคำแนะนำ">
+        ❓ <span class="hidden sm:inline ml-1">คำแนะนำ</span>
+      </button> 
+      <button id="homeBtn" type="button" class="game-button rounded-2xl bg-blue-500 px-3 py-2 font-bold text-white" aria-label="กลับหน้าแรก">
+        🏠 <span class="hidden sm:inline ml-1">หน้าแรก</span>
+      </button>
+     </nav>
+    </div>
+   </header>
+
+   <main class="relative z-10 w-full px-4 pb-10 pt-6">
+    <!-- หน้า Welcome -->
+    <section id="welcome" class="screen active mx-auto max-w-4xl text-center">
+     <div class="panel rounded-[34px] px-6 py-10 sm:px-12">
+      <img src="https://lh3.googleusercontent.com/d/1uQvInjH4q9_GMyI7GLVFsgole7Wv6K2c" class="welcome-img star-pop" referrerpolicy="no-referrer" alt="ตราสัญลักษณ์">
+      <p class="mx-auto mb-3 w-fit rounded-full bg-blue-100/90 text-blue-700 px-4 py-1 font-bold shadow-sm">เกมการศึกษาสำหรับเด็ก</p>
+      <h1 class="m-0 text-3xl sm:text-4xl font-extrabold text-slate-800 drop-shadow-sm">เกมเรียนรู้สิ่งของใช้ในชีวิตประจำวัน
+        <button type="button" class="speaker-btn" onclick="speakText('เกมเรียนรู้สิ่งของใช้ในชีวิตประจำวัน')" title="ฟังเสียง">🔊</button>
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-slate-800 font-semibold leading-relaxed drop-shadow-sm">มาสนุกกับการเรียนรู้ชื่อสิ่งของ การจัดหมวดหมู่ และการเรียงลำดับผ่าน 8 ด่านสุดสนุกกันเลย!</p>
+      
+      <div class="my-7 grid grid-cols-2 sm:grid-cols-4 gap-4 justify-items-center items-center">
+        <div class="flex flex-col items-center bg-white/80 p-2 rounded-2xl shadow-sm w-full">
+          <img src="https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c" class="w-12 h-12 object-contain" referrerpolicy="no-referrer" alt="สบู่">
+          <span class="font-bold text-slate-700 mt-1">สบู่ <button type="button" class="speaker-btn" onclick="speakText('สบู่')" title="ฟังเสียง">🔊</button></span>
+        </div>
+        <div class="flex flex-col items-center bg-white/80 p-2 rounded-2xl shadow-sm w-full">
+          <img src="https://lh3.googleusercontent.com/d/14kOiEbc3dxNHbxTMimyt-Vm3t-FnwEbn" class="w-12 h-12 object-contain" referrerpolicy="no-referrer" alt="ยาสีฟัน">
+          <span class="font-bold text-slate-700 mt-1">ยาสีฟัน <button type="button" class="speaker-btn" onclick="speakText('ยาสีฟัน')" title="ฟังเสียง">🔊</button></span>
+        </div>
+        <div class="flex flex-col items-center bg-white/80 p-2 rounded-2xl shadow-sm w-full">
+          <img src="https://lh3.googleusercontent.com/d/1141qSPA0mtZ7V9QZzmKUTzFEbupVdtk0" class="w-12 h-12 object-contain" referrerpolicy="no-referrer" alt="แชมพู">
+          <span class="font-bold text-slate-700 mt-1">แชมพู <button type="button" class="speaker-btn" onclick="speakText('แชมพู')" title="ฟังเสียง">🔊</button></span>
+        </div>
+        <div class="flex flex-col items-center bg-white/80 p-2 rounded-2xl shadow-sm w-full">
+          <img src="https://lh3.googleusercontent.com/d/190JBq3QfFJGukd6pVxGbQLe-tAxb7miY" class="w-12 h-12 object-contain" referrerpolicy="no-referrer" alt="บะหมี่">
+          <span class="font-bold text-slate-700 mt-1">บะหมี่ <button type="button" class="speaker-btn" onclick="speakText('บะหมี่')" title="ฟังเสียง">🔊</button></span>
+        </div>
+      </div>
+
+      <button id="startBtn" type="button" class="game-button bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl px-10 py-4 font-extrabold text-2xl shadow-lg">
+        เริ่มเล่นเกม 🚀
+      </button>
+     </div>
+    </section>
+
+    <!-- Stage 1 -->
+    <section id="stage1" class="screen mx-auto max-w-4xl" aria-labelledby="s1title">
+     <div class="panel rounded-[30px] p-5 sm:p-8">
+      <div class="flex items-center gap-3">
+       <span class="rounded-2xl bg-yellow-300 px-4 py-2 text-xl font-extrabold">1</span>
+       <div>
+        <h1 id="s1title" class="m-0 font-extrabold text-xl text-slate-800">นี่คือรูปอะไร?
+          <button type="button" class="speaker-btn" onclick="speakText('นี่คือรูปอะไร? ทายสิว่าสิ่งของในรูปภาพคืออะไร')" title="ฟังโจทย์">🔊</button>
+        </h1>
+        <p class="m-0 text-slate-600">ทายสิว่าสิ่งของในรูปภาพคืออะไร</p>
+       </div>
+      </div>
+      <div class="mx-auto mt-5 max-w-sm rounded-3xl bg-pink-50/90 p-3 flex justify-center items-center shadow-sm">
+       <img src="https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c" class="product-img" loading="lazy" referrerpolicy="no-referrer" alt="สบู่">
+      </div>
+      <div class="mx-auto mt-5 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-2">
+       <button type="button" class="option s1-answer rounded-2xl p-4 text-lg font-bold flex items-center justify-between" data-answer="soap">
+         <span>1. สบู่</span>
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('สบู่')">🔊</span>
+       </button> 
+       <button type="button" class="option s1-answer rounded-2xl p-4 text-lg font-bold flex items-center justify-between" data-answer="shampoo">
+         <span>2. แชมพู</span>
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('แชมพู')">🔊</span>
+       </button>
+      </div>
+      <div class="mt-5 text-center">
+       <button id="s1check" type="button" class="game-button bg-blue-500 text-white rounded-2xl px-8 py-3 font-extrabold text-lg">ตรวจคำตอบ</button>
+       <p id="s1status" class="status mt-3" aria-live="polite"></p>
+      </div>
+     </div>
+    </section>
+
+    <!-- Stage 2 -->
+    <section id="stage2" class="screen mx-auto max-w-4xl" aria-labelledby="s2title">
+     <div class="panel rounded-[30px] p-5 sm:p-8">
+      <div class="flex items-center gap-3">
+       <span class="rounded-2xl bg-yellow-300 px-4 py-2 text-xl font-extrabold">2</span>
+       <div>
+        <h1 id="s2title" class="m-0 font-extrabold text-xl text-slate-800">ยาสีฟันใช้ทำอะไร?
+          <button type="button" class="speaker-btn" onclick="speakText('ยาสีฟันใช้ทำอะไร? เลือกประโยชน์ของยาสีฟันให้ถูกต้อง')" title="ฟังโจทย์">🔊</button>
+        </h1>
+        <p class="m-0 text-slate-600">เลือกประโยชน์ของยาสีฟันให้ถูกต้อง</p>
+       </div>
+      </div>
+      <div class="mx-auto mt-5 max-w-sm rounded-3xl bg-blue-50/90 p-3 flex justify-center items-center shadow-sm">
+       <img src="https://lh3.googleusercontent.com/d/14kOiEbc3dxNHbxTMimyt-Vm3t-FnwEbn" class="product-img" loading="lazy" referrerpolicy="no-referrer" alt="ยาสีฟัน">
+      </div>
+      <div class="mx-auto mt-5 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-2">
+       <button type="button" class="option s2-answer rounded-2xl p-4 text-lg font-bold flex items-center justify-between" data-answer="brush">
+         <span>1. การแปรงฟัน</span>
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('การแปรงฟัน')">🔊</span>
+       </button> 
+       <button type="button" class="option s2-answer rounded-2xl p-4 text-lg font-bold flex items-center justify-between" data-answer="bath">
+         <span>2. การอาบน้ำ</span>
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('การอาบน้ำ')">🔊</span>
+       </button>
+      </div>
+      <div class="mt-5 text-center">
+       <button id="s2check" type="button" class="game-button bg-blue-500 text-white rounded-2xl px-8 py-3 font-extrabold text-lg">ตรวจคำตอบ</button>
+       <p id="s2status" class="status mt-3" aria-live="polite"></p>
+      </div>
+     </div>
+    </section>
+
+    <!-- Stage 3 -->
+    <section id="stage3" class="screen mx-auto max-w-4xl" aria-labelledby="s3title">
+     <div class="panel rounded-[30px] p-5 sm:p-8">
+      <div class="flex items-center gap-3">
+       <span class="rounded-2xl bg-yellow-300 px-4 py-2 text-xl font-extrabold">3</span>
+       <div>
+        <h1 id="s3title" class="m-0 font-extrabold text-xl text-slate-800">จับคู่สิ่งของที่เหมือนกัน
+          <button type="button" class="speaker-btn" onclick="speakText('จับคู่สิ่งของที่เหมือนกัน คลิกเลือกของทางซ้าย แล้วกดเลือกของทางขวาที่เหมือนกัน')" title="ฟังโจทย์">🔊</button>
+        </h1>
+        <p class="m-0 text-slate-600">คลิกเลือกของซ้าย แล้วกดเลือกของทางขวาที่เหมือนกัน</p>
+       </div>
+      </div>
+      <div class="mt-6 grid grid-cols-[1fr_42px_1fr] items-center gap-3">
+       <div class="space-y-4">
+        <button type="button" class="pair-item s3-left w-full flex flex-col items-center" data-pair="soap">
+          <img src="https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c" class="product-img" loading="lazy" referrerpolicy="no-referrer">
+          <span class="font-bold text-slate-700 mt-1">สบู่ <span class="speaker-btn" onclick="event.stopPropagation(); speakText('สบู่')">🔊</span></span>
+        </button> 
+        <button type="button" class="pair-item s3-left w-full flex flex-col items-center" data-pair="shampoo">
+          <img src="https://lh3.googleusercontent.com/d/1141qSPA0mtZ7V9QZzmKUTzFEbupVdtk0" class="product-img" loading="lazy" referrerpolicy="no-referrer">
+          <span class="font-bold text-slate-700 mt-1">แชมพู <span class="speaker-btn" onclick="event.stopPropagation(); speakText('แชมพู')">🔊</span></span>
+        </button>
+       </div>
+       <div class="space-y-16 text-center text-3xl text-pink-500 font-bold">
+        ↔<br>↔
+       </div>
+       <div class="space-y-4">
+        <button type="button" class="pair-item s3-right w-full flex flex-col items-center" data-pair="shampoo">
+          <img src="https://lh3.googleusercontent.com/d/1141qSPA0mtZ7V9QZzmKUTzFEbupVdtk0" class="product-img" loading="lazy" referrerpolicy="no-referrer">
+          <span class="font-bold text-slate-700 mt-1">แชมพู <span class="speaker-btn" onclick="event.stopPropagation(); speakText('แชมพู')">🔊</span></span>
+        </button> 
+        <button type="button" class="pair-item s3-right w-full flex flex-col items-center" data-pair="soap">
+          <img src="https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c" class="product-img" loading="lazy" referrerpolicy="no-referrer">
+          <span class="font-bold text-slate-700 mt-1">สบู่ <span class="speaker-btn" onclick="event.stopPropagation(); speakText('สบู่')">🔊</span></span>
+        </button>
+       </div>
+      </div>
+      <p id="s3status" class="status mt-5 text-center" aria-live="polite"></p>
+     </div>
+    </section>
+
+    <!-- Stage 4 -->
+    <section id="stage4" class="screen mx-auto max-w-5xl" aria-labelledby="s4title">
+     <div class="panel rounded-[30px] p-5 sm:p-8">
+      <div class="flex items-center gap-3">
+       <span class="rounded-2xl bg-yellow-300 px-4 py-2 text-xl font-extrabold">4</span>
+       <div>
+        <h1 id="s4title" class="m-0 font-extrabold text-xl text-slate-800">แยกประเภทสิ่งของ
+          <button type="button" class="speaker-btn" onclick="speakText('แยกประเภทสิ่งของ เลือกสิ่งของ แล้วกดเลือกกลุ่มว่าเป็น ของกิน หรือ ของใช้')" title="ฟังโจทย์">🔊</button>
+        </h1>
+        <p class="m-0 text-slate-600">เลือกสิ่งของ แล้วกดเลือกกลุ่มว่าเป็น "ของกิน" หรือ "ของใช้"</p>
+       </div>
+      </div>
+      <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+       <button class="option s4-item rounded-2xl p-4 font-bold flex flex-col items-center" type="button" data-type="food">
+         <img src="https://lh3.googleusercontent.com/d/11pbezNYp4zPbodz7H3mHU895-trxdkdk" class="product-img h-16" loading="lazy" referrerpolicy="no-referrer">
+         <span class="mt-1">แอปเปิล <span class="speaker-btn" onclick="event.stopPropagation(); speakText('แอปเปิล')">🔊</span></span>
+       </button> 
+       <button class="option s4-item rounded-2xl p-4 font-bold flex flex-col items-center" type="button" data-type="food">
+         <img src="https://lh3.googleusercontent.com/d/1RHjR_Vt5lKtbZDSTQXA80qJhjD6DMy_e" class="product-img h-16" loading="lazy" referrerpolicy="no-referrer">
+         <span class="mt-1">ขนมปัง <span class="speaker-btn" onclick="event.stopPropagation(); speakText('ขนมปัง')">🔊</span></span>
+       </button> 
+       <button class="option s4-item rounded-2xl p-4 font-bold flex flex-col items-center" type="button" data-type="use">
+         <img src="https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c" class="product-img h-16" loading="lazy" referrerpolicy="no-referrer">
+         <span class="mt-1">สบู่ <span class="speaker-btn" onclick="event.stopPropagation(); speakText('สบู่')">🔊</span></span>
+       </button> 
+       <button class="option s4-item rounded-2xl p-4 font-bold flex flex-col items-center" type="button" data-type="use">
+         <img src="https://lh3.googleusercontent.com/d/1141qSPA0mtZ7V9QZzmKUTzFEbupVdtk0" class="product-img h-16" loading="lazy" referrerpolicy="no-referrer">
+         <span class="mt-1">แชมพู <span class="speaker-btn" onclick="event.stopPropagation(); speakText('แชมพู')">🔊</span></span>
+       </button>
+      </div>
+      <div class="mt-5 flex flex-wrap justify-center gap-4">
+       <button id="foodBtn" type="button" class="game-button bg-amber-500 text-white rounded-2xl px-6 py-3 font-extrabold text-lg">🍔 ของกิน</button> 
+       <button id="useBtn" type="button" class="game-button bg-indigo-500 text-white rounded-2xl px-6 py-3 font-extrabold text-lg">🧼 ของใช้</button>
+      </div>
+      <p id="s4status" class="status mt-3 text-center" aria-live="polite"></p>
+     </div>
+    </section>
+
+    <!-- Stage 5 -->
+    <section id="stage5" class="screen mx-auto max-w-4xl" aria-labelledby="s5title">
+     <div class="panel rounded-[30px] p-5 sm:p-8">
+      <div class="flex items-center gap-3">
+       <span class="rounded-2xl bg-yellow-300 px-4 py-2 text-xl font-extrabold">5</span>
+       <div>
+        <h1 id="s5title" class="m-0 font-extrabold text-xl text-slate-800">พาสบู่ไปหาดาว
+          <button type="button" class="speaker-btn" onclick="speakText('พาสบู่ไปหาดาว กดปุ่มลูกศรทิศทางเพื่อเลื่อนสบู่ไปให้ถึงช่องดาว')" title="ฟังโจทย์">🔊</button>
+        </h1>
+        <p class="m-0 text-slate-600">กดปุ่มลูกศรทิศทางเพื่อเลื่อนสบู่ไปให้ถึงช่องเป้าหมาย (⭐)</p>
+       </div>
+      </div>
+      <div class="mx-auto mt-6 grid max-w-xs grid-cols-3 gap-2" id="moveGrid" aria-label="ตารางเขาวงกต">
+       <div class="grid-cell"></div><div class="grid-cell goal">⭐</div><div class="grid-cell"></div>
+       <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+       <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+      </div>
+      <div class="mx-auto mt-6 grid w-52 grid-cols-3 gap-2">
+       <span></span>
+       <button class="game-button rounded-2xl bg-blue-500 hover:bg-blue-600 p-3 text-white text-2xl flex justify-center items-center shadow-md" data-move="up" type="button" aria-label="ขึ้น">⬆️</button>
+       <span></span> 
+       <button class="game-button rounded-2xl bg-blue-500 hover:bg-blue-600 p-3 text-white text-2xl flex justify-center items-center shadow-md" data-move="left" type="button" aria-label="ซ้าย">⬅️</button> 
+       <button class="game-button rounded-2xl bg-pink-500 hover:bg-pink-600 p-3 text-white text-2xl flex justify-center items-center shadow-md" data-move="down" type="button" aria-label="ลง">⬇️</button> 
+       <button class="game-button rounded-2xl bg-blue-500 hover:bg-blue-600 p-3 text-white text-2xl flex justify-center items-center shadow-md" data-move="right" type="button" aria-label="ขวา">➡️</button>
+      </div>
+      <p id="s5status" class="status mt-4 text-center" aria-live="polite"></p>
+     </div>
+    </section>
+
+    <!-- Stage 6 -->
+    <section id="stage6" class="screen mx-auto max-w-5xl" aria-labelledby="s6title">
+     <div class="panel rounded-[30px] p-5 sm:p-8">
+      <div class="flex items-center gap-3">
+       <span class="rounded-2xl bg-yellow-300 px-4 py-2 text-xl font-extrabold">6</span>
+       <div>
+        <h1 id="s6title" class="m-0 font-extrabold text-xl text-slate-800">จัดกลุ่มสินค้าให้ถูกต้อง
+          <button type="button" class="speaker-btn" onclick="speakText('จัดกลุ่มสินค้าให้ถูกต้อง เลือกสินค้า แล้วกดปุ่มประเภทสินค้า')" title="ฟังโจทย์">🔊</button>
+        </h1>
+        <p class="m-0 text-slate-600">เลือกสินค้า แล้วกดปุ่มประเภทสินค้า</p>
+       </div>
+      </div>
+      <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+       <button class="option s6-item rounded-2xl p-4 flex flex-col items-center" type="button" data-group="use">
+         <img src="https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c" class="product-img h-20" loading="lazy" referrerpolicy="no-referrer">
+         <b class="text-base mt-1">สบู่ <span class="speaker-btn" onclick="event.stopPropagation(); speakText('สบู่')">🔊</span></b>
+       </button> 
+       <button class="option s6-item rounded-2xl p-4 flex flex-col items-center" type="button" data-group="food">
+         <img src="https://lh3.googleusercontent.com/d/190JBq3QfFJGukd6pVxGbQLe-tAxb7miY" class="product-img h-20" loading="lazy" referrerpolicy="no-referrer">
+         <b class="text-base mt-1">บะหมี่ <span class="speaker-btn" onclick="event.stopPropagation(); speakText('บะหมี่')">🔊</span></b>
+       </button> 
+       <button class="option s6-item rounded-2xl p-4 flex flex-col items-center" type="button" data-group="use">
+         <img src="https://lh3.googleusercontent.com/d/1141qSPA0mtZ7V9QZzmKUTzFEbupVdtk0" class="product-img h-20" loading="lazy" referrerpolicy="no-referrer">
+         <b class="text-base mt-1">แชมพู <span class="speaker-btn" onclick="event.stopPropagation(); speakText('แชมพู')">🔊</span></b>
+       </button> 
+       <button class="option s6-item rounded-2xl p-4 flex flex-col items-center" type="button" data-group="food">
+         <img src="https://lh3.googleusercontent.com/d/1RHjR_Vt5lKtbZDSTQXA80qJhjD6DMy_e" class="product-img h-20" loading="lazy" referrerpolicy="no-referrer">
+         <b class="text-base mt-1">ขนมปัง <span class="speaker-btn" onclick="event.stopPropagation(); speakText('ขนมปัง')">🔊</span></b>
+       </button>
+      </div>
+      <div class="mt-5 flex justify-center gap-4">
+       <button id="s6food" type="button" class="game-button bg-amber-500 text-white rounded-2xl px-6 py-3 font-bold text-lg">หมวดของกิน</button>
+       <button id="s6use" type="button" class="game-button bg-blue-500 text-white rounded-2xl px-6 py-3 font-bold text-lg">หมวดของใช้</button>
+      </div>
+      <p id="s6status" class="status mt-3 text-center" aria-live="polite"></p>
+     </div>
+    </section>
+
+    <!-- Stage 7 -->
+    <section id="stage7" class="screen mx-auto max-w-5xl" aria-labelledby="s7title">
+     <div class="panel rounded-[30px] p-5 sm:p-8">
+      <div class="flex items-center gap-3">
+       <span class="rounded-2xl bg-yellow-300 px-4 py-2 text-xl font-extrabold">7</span>
+       <div>
+        <h1 id="s7title" class="m-0 font-extrabold text-xl text-slate-800">เรียงลำดับตามรูปแบบตัวอย่าง
+          <button type="button" class="speaker-btn" onclick="speakText('เรียงลำดับตามรูปแบบตัวอย่าง เลือกสินค้าจากด้านล่าง แล้วนำไปวางในช่องตามลำดับแบบตัวอย่าง')" title="ฟังโจทย์">🔊</button>
+        </h1>
+        <p class="m-0 text-slate-600">เลือกสินค้าจากด้านล่าง แล้วนำไปวางในช่องตามลำดับแบบตัวอย่าง</p>
+       </div>
+      </div>
+      <h2 class="mt-5 font-bold text-slate-700">แบบตัวอย่าง:</h2>
+      <div class="grid grid-cols-3 gap-3 rounded-2xl bg-yellow-50/90 p-3 shadow-sm">
+       <div class="rounded-xl bg-white p-2 flex justify-center items-center"><img src="https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c" class="product-img h-16" loading="lazy" referrerpolicy="no-referrer"></div>
+       <div class="rounded-xl bg-white p-2 flex justify-center items-center"><img src="https://lh3.googleusercontent.com/d/14kOiEbc3dxNHbxTMimyt-Vm3t-FnwEbn" class="product-img h-16" loading="lazy" referrerpolicy="no-referrer"></div>
+       <div class="rounded-xl bg-white p-2 flex justify-center items-center"><img src="https://lh3.googleusercontent.com/d/1141qSPA0mtZ7V9QZzmKUTzFEbupVdtk0" class="product-img h-16" loading="lazy" referrerpolicy="no-referrer"></div>
+      </div>
+      <h2 class="mt-5 font-bold text-slate-700">เรียงสินค้าที่นี่:</h2>
+      <div class="grid grid-cols-3 gap-3" id="s7slots">
+        <button class="drop-slot" type="button" data-slot="0"></button>
+        <button class="drop-slot" type="button" data-slot="1"></button>
+        <button class="drop-slot" type="button" data-slot="2"></button>
+      </div>
+      <div class="mt-5 flex justify-center gap-3">
+       <button class="option s7pick rounded-xl p-3 flex items-center gap-2 font-bold" type="button" data-item="soap">
+         <img src="https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c" class="w-7 h-7 object-contain" referrerpolicy="no-referrer"> สบู่ 
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('สบู่')">🔊</span>
+       </button> 
+       <button class="option s7pick rounded-xl p-3 flex items-center gap-2 font-bold" type="button" data-item="toothpaste">
+         <img src="https://lh3.googleusercontent.com/d/14kOiEbc3dxNHbxTMimyt-Vm3t-FnwEbn" class="w-7 h-7 object-contain" referrerpolicy="no-referrer"> ยาสีฟัน 
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('ยาสีฟัน')">🔊</span>
+       </button> 
+       <button class="option s7pick rounded-xl p-3 flex items-center gap-2 font-bold" type="button" data-item="shampoo">
+         <img src="https://lh3.googleusercontent.com/d/1141qSPA0mtZ7V9QZzmKUTzFEbupVdtk0" class="w-7 h-7 object-contain" referrerpolicy="no-referrer"> แชมพู 
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('แชมพู')">🔊</span>
+       </button>
+      </div>
+      <div class="mt-5 text-center">
+       <button id="s7check" type="button" class="game-button bg-blue-500 text-white rounded-2xl px-8 py-3 font-extrabold text-lg">ตรวจคำตอบ</button>
+       <p id="s7status" class="status mt-3" aria-live="polite"></p>
+      </div>
+     </div>
+    </section>
+
+    <!-- Stage 8 -->
+    <section id="stage8" class="screen mx-auto max-w-5xl" aria-labelledby="s8title">
+     <div class="panel rounded-[30px] p-5 sm:p-8">
+      <div class="flex items-center gap-3">
+       <span class="rounded-2xl bg-yellow-300 px-4 py-2 text-xl font-extrabold">8</span>
+       <div>
+        <h1 id="s8title" class="m-0 font-extrabold text-xl text-slate-800">จัดชั้นวางของตามโจทย์
+          <button type="button" class="speaker-btn" onclick="speakText('จัดชั้นวางของตามโจทย์ เรียงลำดับ สบู่ บะหมี่ แชมพู ยาสีฟัน')" title="ฟังโจทย์">🔊</button>
+        </h1>
+        <p class="m-0 text-slate-600">เลือกสินค้าและวางจากช่องซ้ายไปขวาตามลำดับ</p>
+       </div>
+      </div>
+      <p class="mt-5 rounded-2xl bg-yellow-100/90 p-3 text-center font-bold text-amber-900 shadow-sm flex items-center justify-center gap-2">
+        <span>ลำดับที่กำหนด: สบู่ ➔ บะหมี่ ➔ แชมพู ➔ ยาสีฟัน</span>
+        <button type="button" class="speaker-btn" onclick="speakText('ลำดับที่กำหนด สบู่ บะหมี่ แชมพู ยาสีฟัน')">🔊</button>
+      </p>
+      <div id="s8shelf" class="mt-4 grid grid-cols-2 gap-3 rounded-3xl border-8 border-amber-500 bg-amber-200/90 p-4 sm:grid-cols-4 shadow-inner">
+       <button type="button" class="drop-slot bg-white" data-shelf="0"></button>
+       <button type="button" class="drop-slot bg-white" data-shelf="1"></button>
+       <button type="button" class="drop-slot bg-white" data-shelf="2"></button>
+       <button type="button" class="drop-slot bg-white" data-shelf="3"></button>
+      </div>
+      <div class="mt-5 flex flex-wrap justify-center gap-3">
+       <button class="option s8pick rounded-xl p-3 flex items-center gap-2 font-bold" type="button" data-item="soap">
+         <img src="https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c" class="w-7 h-7 object-contain" referrerpolicy="no-referrer"> สบู่
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('สบู่')">🔊</span>
+       </button> 
+       <button class="option s8pick rounded-xl p-3 flex items-center gap-2 font-bold" type="button" data-item="noodle">
+         <img src="https://lh3.googleusercontent.com/d/190JBq3QfFJGukd6pVxGbQLe-tAxb7miY" class="w-7 h-7 object-contain" referrerpolicy="no-referrer"> บะหมี่
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('บะหมี่')">🔊</span>
+       </button> 
+       <button class="option s8pick rounded-xl p-3 flex items-center gap-2 font-bold" type="button" data-item="shampoo">
+         <img src="https://lh3.googleusercontent.com/d/1141qSPA0mtZ7V9QZzmKUTzFEbupVdtk0" class="w-7 h-7 object-contain" referrerpolicy="no-referrer"> แชมพู
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('แชมพู')">🔊</span>
+       </button> 
+       <button class="option s8pick rounded-xl p-3 flex items-center gap-2 font-bold" type="button" data-item="toothpaste">
+         <img src="https://lh3.googleusercontent.com/d/14kOiEbc3dxNHbxTMimyt-Vm3t-FnwEbn" class="w-7 h-7 object-contain" referrerpolicy="no-referrer"> ยาสีฟัน
+         <span class="speaker-btn" onclick="event.stopPropagation(); speakText('ยาสีฟัน')">🔊</span>
+       </button>
+      </div>
+      <p id="s8status" class="status mt-4 text-center" aria-live="polite"></p>
+     </div>
+    </section>
+
+    <!-- Complete -->
+    <section id="complete" class="screen mx-auto max-w-4xl text-center">
+     <div class="panel relative overflow-hidden rounded-[34px] px-6 py-10 sm:px-12">
+      <div id="confettiBox" aria-hidden="true"></div>
+      <div class="relative z-10">
+       <img src="https://lh3.googleusercontent.com/d/1XNLQJ2BXE0tkWHkPcyzIR0jP_RWUUaLK" class="trophy-img star-pop" referrerpolicy="no-referrer" alt="ดาวฉลอง">
+       <h1 class="m-0 font-extrabold text-3xl sm:text-4xl text-slate-800 drop-shadow-sm">ยินดีด้วย! หนูผ่านครบทุกด่านแล้ว
+         <button type="button" class="speaker-btn" onclick="speakText('ยินดีด้วย หนูผ่านครบทุกด่านแล้ว หนูมีความรู้ความเข้าใจเกี่ยวกับสิ่งของต่างๆ และทำคะแนนได้ยอดเยี่ยมมาก')" title="ฟังเสียง">🔊</button>
+       </h1>
+       <p class="mx-auto mt-3 max-w-xl text-slate-800 font-semibold leading-relaxed">หนูมีความรู้ความเข้าใจเกี่ยวกับสิ่งของต่างๆ และทำคะแนนได้ยอดเยี่ยมมาก!</p>
+       
+       <!-- ส่วนรูปภาพครูมุกดาและชื่อ -->
+       <div class="flex flex-col items-center justify-center">
+        <img src="https://lh3.googleusercontent.com/d/1H6cQJ9PZ-MuKpXr0KmP2HwVYMovDGCay" class="teacher-img" referrerpolicy="no-referrer" alt="ครูมุกดา จ้อจันทึก">
+        <p class="m-0 text-lg font-bold text-slate-800 drop-shadow-sm">ครูมุกดา จ้อจันทึก</p>
+       </div>
+
+       <button id="playAgainBtn" type="button" class="game-button bg-emerald-500 text-white mt-6 rounded-2xl px-8 py-4 font-extrabold text-xl shadow-lg">เล่นอีกครั้ง 🔄</button>
+      </div>
+     </div>
+    </section>
+   </main>
+
+   <!-- Modal คำแนะนำ -->
+   <div id="helpModal" class="modal fixed inset-0 z-50 items-center justify-center bg-slate-900/45 p-4" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="w-full max-w-md rounded-3xl p-6 panel">
+     <div class="flex items-start justify-between gap-4">
+      <div>
+       <h2 id="helpTitle" class="m-0 font-extrabold text-xl text-slate-800">💡 วิธีการเล่น</h2>
+       <p id="helpText" class="mt-3 leading-relaxed text-slate-600"></p>
+      </div>
+      <button id="closeHelp" type="button" class="rounded-xl bg-slate-100 p-2 text-slate-500 hover:bg-slate-200" aria-label="ปิดคำแนะนำ">❌</button>
+     </div>
+     <button id="helpOk" type="button" class="game-button bg-blue-500 text-white mt-5 rounded-2xl px-6 py-3 font-bold w-full">เข้าใจแล้ว</button>
+    </div>
+   </div>
+  </div>
+
+  <script>
+    let femaleThaiVoice = null;
+
+    // ค้นหาและเลือกเสียงผู้หญิงภาษาไทย
+    function loadVoices() {
+      if ('speechSynthesis' in window) {
+        const voices = window.speechSynthesis.getVoices();
+        // ค้นหาเสียงภาษาไทยที่เป็นผู้หญิง (เช่น Premwadee หรือเสียงผู้หญิงในระบบ)
+        femaleThaiVoice = voices.find(v => v.lang.includes('th') && (v.name.includes('Premwadee') || v.name.includes('Female') || v.name.includes('Google')));
+        if (!femaleThaiVoice) {
+          femaleThaiVoice = voices.find(v => v.lang.includes('th'));
+        }
+      }
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+      loadVoices();
+    }
+
+    // ฟังก์ชันอ่านเสียงพูดผู้หญิงภาษาไทย
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'th-TH';
+        utterance.rate = 0.9;
+        utterance.pitch = 1.2; // ปรับระดับเสียงขึ้นเล็กน้อยเพื่อให้เป็นโทนเสียงผู้หญิง/สดใสสำหรับเด็ก
+        if (femaleThaiVoice) {
+          utterance.voice = femaleThaiVoice;
+        }
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    const screens = ['welcome','stage1','stage2','stage3','stage4','stage5','stage6','stage7','stage8','complete'];
+    let currentStage = 0, selections = {}, s3Selected = null, s3Matched = new Set(), movePos = 6, s7Pick = null, s7Values = ['', '', ''], s8Pick = null, s8Values = ['', '', '', ''];
+    const hints = ['เลือกคำตอบที่ถูกต้อง แล้วกดปุ่มตรวจคำตอบ','ดูรูปยาสีฟัน แล้วเลือกหน้าที่ที่ถูกต้อง','เลือกของด้านซ้าย แล้วเลือกของเหมือนกันด้านขวา','เลือกสิ่งของ แล้วกดปุ่มหมวดหมู่ที่ถูกต้อง','กดลูกศรเพื่อพาสบู่ไปที่ช่องดาว','เลือกของ แล้วกดปุ่มกลุ่มที่ถูกต้อง','เลือกสินค้า แล้วกดช่องว่างให้เรียงเหมือนตัวอย่าง','เลือกสินค้าและวางบนชั้นตามลำดับที่กำหนด'];
+    
+    const stageTitles = [
+      '',
+      'ด่านที่ 1 นี่คือรูปอะไร? ทายสิว่าสิ่งของในรูปภาพคืออะไร',
+      'ด่านที่ 2 ยาสีฟันใช้ทำอะไร? เลือกประโยชน์ของยาสีฟันให้ถูกต้อง',
+      'ด่านที่ 3 จับคู่สิ่งของที่เหมือนกัน คลิกเลือกของทางซ้าย แล้วกดเลือกของทางขวาที่เหมือนกัน',
+      'ด่านที่ 4 แยกประเภทสิ่งของ เลือกสิ่งของ แล้วกดเลือกกลุ่มว่าเป็น ของกิน หรือ ของใช้',
+      'ด่านที่ 5 พาสบู่ไปหาดาว กดปุ่มลูกศรทิศทางเพื่อเลื่อนสบู่ไปให้ถึงช่องดาว',
+      'ด่านที่ 6 จัดกลุ่มสินค้าให้ถูกต้อง เลือกสินค้า แล้วกดปุ่มประเภทสินค้า',
+      'ด่านที่ 7 เรียงลำดับตามรูปแบบตัวอย่าง เลือกสินค้าจากด้านล่าง แล้วนำไปวางในช่องตามลำดับแบบตัวอย่าง',
+      'ด่านที่ 8 จัดชั้นวางของตามโจทย์ เรียงลำดับ สบู่ บะหมี่ แชมพู ยาสีฟัน'
+    ];
+
+    const soapImgUrl = 'https://lh3.googleusercontent.com/d/1oo8YRPhZW_zmfzNotlsDbw9qVAamN--c';
+    const toothpasteImgUrl = 'https://lh3.googleusercontent.com/d/14kOiEbc3dxNHbxTMimyt-Vm3t-FnwEbn';
+    const shampooImgUrl = 'https://lh3.googleusercontent.com/d/1141qSPA0mtZ7V9QZzmKUTzFEbupVdtk0';
+    const appleImgUrl = 'https://lh3.googleusercontent.com/d/11pbezNYp4zPbodz7H3mHU895-trxdkdk';
+    const breadImgUrl = 'https://lh3.googleusercontent.com/d/1RHjR_Vt5lKtbZDSTQXA80qJhjD6DMy_e';
+    const noodleImgUrl = 'https://lh3.googleusercontent.com/d/190JBq3QfFJGukd6pVxGbQLe-tAxb7miY';
+    const icons = {
+      soap:`<img src="${soapImgUrl}" class="mini-product inline-block" referrerpolicy="no-referrer">`,
+      toothpaste:`<img src="${toothpasteImgUrl}" class="mini-product inline-block" referrerpolicy="no-referrer">`,
+      shampoo:`<img src="${shampooImgUrl}" class="mini-product inline-block" referrerpolicy="no-referrer">`,
+      apple:`<img src="${appleImgUrl}" class="mini-product inline-block" referrerpolicy="no-referrer">`,
+      bread:`<img src="${breadImgUrl}" class="mini-product inline-block" referrerpolicy="no-referrer">`,
+      noodle:`<img src="${noodleImgUrl}" class="mini-product inline-block" referrerpolicy="no-referrer">`
+    };
+    
+    function show(id) {
+      screens.forEach(x => document.getElementById(x).classList.toggle('active',x===id));
+      document.getElementById('game-header').classList.toggle('hidden',id==='welcome'||id==='complete');
+      if(id.startsWith('stage')) { 
+        currentStage=Number(id.replace('stage','')); 
+        document.getElementById('progressText').textContent=`ด่าน ${currentStage} จาก 8`; 
+        if(currentStage===5) { movePos=6; renderMove(); }
+        if (stageTitles[currentStage]) {
+          speakText(stageTitles[currentStage]);
+        }
+      } else if (id === 'complete') {
+        speakText('ยินดีด้วย หนูผ่านครบทุกด่านแล้ว เก่งมากค่ะ');
+      }
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function sound(ok=true) {
+      try {
+        const ctx=new (window.AudioContext||window.webkitAudioContext)(), o=ctx.createOscillator(), g=ctx.createGain();
+        o.type=ok?'sine':'square'; o.frequency.value=ok?660:190; g.gain.setValueAtTime(.11,ctx.currentTime); g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.35); o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.35);
+      } catch(e){}
+    }
+    function status(id,msg,ok=false){
+      const el=document.getElementById(id);
+      if(el){
+        el.textContent=msg;
+        el.style.color=ok?'#138b61':'#e24367';
+      }
+    }
+    function pass(stage) { 
+      sound(true); 
+      status('s'+stage+'status','⭐ เก่งมาก! ผ่านด่านแล้ว ⭐',true); 
+      speakText('เก่งมาก ผ่านด่านแล้วค่ะ');
+      setTimeout(()=>stage===8?finish():show('stage'+(stage+1)),1200); 
+    }
+    function fail(statusId) {
+      sound(false);
+      status(statusId,'ลองใหม่อีกครั้งนะ');
+      speakText('ยังไม่ถูกต้อง ลองใหม่อีกครั้งนะคะ');
+    }
+
+    function choose(group, el){ document.querySelectorAll(group).forEach(x=>x.classList.remove('selected')); el.classList.add('selected'); }
+    function resetGame(){ selections={};s3Selected=null;s3Matched.clear();movePos=6;s7Pick=null;s7Values=['','',''];s8Pick=null;s8Values=['','','',''];document.querySelectorAll('.selected,.matched,.filled').forEach(e=>e.classList.remove('selected','matched','filled'));document.querySelectorAll('[id$="status"]').forEach(e=>e.textContent='');renderMove();renderSlots();renderShelf();show('welcome');}
+    
+    document.getElementById('startBtn').onclick=()=>show('stage1'); document.getElementById('homeBtn').onclick=resetGame; document.getElementById('playAgainBtn').onclick=resetGame;
+    document.getElementById('helpBtn').onclick=()=>{
+      document.getElementById('helpText').textContent=hints[currentStage-1];
+      document.getElementById('helpModal').classList.add('show');
+      speakText('คำแนะนำ: ' + hints[currentStage-1]);
+    }; 
+    ['closeHelp','helpOk'].forEach(id=>document.getElementById(id).onclick=()=>document.getElementById('helpModal').classList.remove('show'));
+    
+    document.querySelectorAll('.s1-answer').forEach(b=>b.onclick=()=>{selections.s1=b.dataset.answer;choose('.s1-answer',b)}); 
+    document.getElementById('s1check').onclick=()=>selections.s1==='soap'?pass(1):fail('s1status');
+    
+    document.querySelectorAll('.s2-answer').forEach(b=>b.onclick=()=>{selections.s2=b.dataset.answer;choose('.s2-answer',b)}); 
+    document.getElementById('s2check').onclick=()=>selections.s2==='brush'?pass(2):fail('s2status');
+    
+    document.querySelectorAll('.pair-item').forEach(b=>b.onclick=()=>{
+      if(b.classList.contains('s3-left')){
+        document.querySelectorAll('.s3-left').forEach(x=>x.classList.remove('selected'));
+        b.classList.add('selected');
+        s3Selected=b.dataset.pair;
+      }else if(!s3Selected){
+        status('s3status','เลือกของทางซ้ายก่อนนะ');
+        speakText('เลือกของทางซ้ายก่อนนะคะ');
+      }else if(b.dataset.pair===s3Selected){
+        b.classList.add('matched');
+        document.querySelector('.s3-left[data-pair="'+s3Selected+'"]').classList.add('matched');
+        s3Matched.add(s3Selected);
+        s3Selected=null;
+        document.querySelectorAll('.s3-left').forEach(x=>x.classList.remove('selected'));
+        if(s3Matched.size===2)pass(3);
+      }else{
+        fail('s3status');
+      }
+    });
+
+    document.querySelectorAll('.s4-item').forEach(b=>b.onclick=()=>{selections.s4=b.dataset.type;choose('.s4-item',b)}); 
+    document.getElementById('foodBtn').onclick=()=>selections.s4==='food'?pass(4):fail('s4status'); 
+    document.getElementById('useBtn').onclick=()=>selections.s4==='use'?pass(4):fail('s4status');
+    
+    function renderMove(){
+      document.querySelectorAll('#moveGrid .grid-cell').forEach((c,i)=>{
+        c.classList.toggle('player',i===movePos);
+        c.innerHTML = (i===movePos) ? `<img src="${soapImgUrl}" class="w-12 h-12 object-contain" referrerpolicy="no-referrer">` : (i===1 ? '⭐' : '');
+      });
+    }
+    document.querySelectorAll('[data-move]').forEach(b=>b.onclick=()=>{let r=Math.floor(movePos/3),c=movePos%3,d=b.dataset.move;if(d==='up'&&r>0)r--;if(d==='down'&&r<2)r++;if(d==='left'&&c>0)c--;if(d==='right'&&c<2)c++;movePos=r*3+c;renderMove();if(movePos===1)pass(5);});
+    
+    document.querySelectorAll('.s6-item').forEach(b=>b.onclick=()=>{selections.s6=b.dataset.group;choose('.s6-item',b)}); 
+    document.getElementById('s6food').onclick=()=>selections.s6==='food'?pass(6):fail('s6status');
+    document.getElementById('s6use').onclick=()=>selections.s6==='use'?pass(6):fail('s6status');
+    
+    document.querySelectorAll('.s7pick').forEach(b=>b.onclick=()=>{s7Pick=b.dataset.item;choose('.s7pick',b)}); 
+    function renderSlots(){document.querySelectorAll('#s7slots [data-slot]').forEach((x,i)=>{x.innerHTML=s7Values[i]?icons[s7Values[i]]:'';x.classList.toggle('filled',!!s7Values[i]);});} 
+    document.querySelectorAll('#s7slots [data-slot]').forEach(b=>b.onclick=()=>{
+      if(!s7Pick) {
+        status('s7status','เลือกสินค้าด้านล่างก่อนนะ');
+        speakText('เลือกสินค้าด้านล่างก่อนนะคะ');
+        return;
+      }
+      s7Values[b.dataset.slot]=s7Pick;
+      renderSlots();
+    });
+    document.getElementById('s7check').onclick=()=>s7Values.join(',')==='soap,toothpaste,shampoo'?pass(7):fail('s7status');
+    
+    document.querySelectorAll('.s8pick').forEach(b=>b.onclick=()=>{s8Pick=b.dataset.item;choose('.s8pick',b)}); 
+    function renderShelf(){document.querySelectorAll('#s8shelf [data-shelf]').forEach((x,i)=>{x.innerHTML=s8Values[i]?icons[s8Values[i]]:'';x.classList.toggle('filled',!!s8Values[i]);});}
+    document.querySelectorAll('#s8shelf [data-shelf]').forEach(b=>b.onclick=()=>{
+      if(!s8Pick) {
+        status('s8status','เลือกสินค้าก่อนนะ');
+        speakText('เลือกสินค้าก่อนนะคะ');
+        return;
+      }
+      let i=Number(b.dataset.shelf);
+      if(i!==s8Values.findIndex(x=>x==='')) {
+        status('s8status','วางจากช่องซ้ายไปขวาทีละช่องนะ');
+        speakText('วางจากช่องซ้ายไปขวาทีละช่องนะคะ');
+        return;
+      }
+      s8Values[i]=s8Pick;
+      renderShelf();
+      if(s8Values.join(',')==='soap,noodle,shampoo,toothpaste') pass(8);
+      else if(i===3){
+        fail('s8status');
+        s8Values=['','','',''];
+        renderShelf();
+      }
+    });
+    
+    function finish(){
+      sound(true);
+      show('complete');
+      const box=document.getElementById('confettiBox');
+      box.innerHTML='';
+      for(let i=0;i<28;i++){
+        let c=document.createElement('span');
+        c.className='confetti';
+        c.style.left=(Math.random()*100)+'%';
+        c.style.background=['#ff668e','#ffd34d','#59d5b0','#5597ff'][i%4];
+        c.style.animationDelay=(Math.random()*1.4)+'s';
+        box.appendChild(c);
+      }
+    }
+    
+    window.onload = () => {
+      loadVoices();
+      renderMove(); 
+      renderSlots(); 
+      renderShelf();
+    };
+  </script>
+ </body>
+</html>
